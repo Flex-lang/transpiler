@@ -12,7 +12,7 @@ Implementation of Flex's transpiler using the NLU model trained on [Wit.ai](http
 
 1. Create a Python 3 virtual environment (named `venv`):
    ```bash
-   virtualenv-3 venv
+   virtualenv -p python3 venv
    ```
 
 1. Add Wit's API _"Server Access Token"_ as an environment variable. For ease, add it to your virtual environment's activate script:
