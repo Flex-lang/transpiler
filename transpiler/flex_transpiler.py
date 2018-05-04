@@ -32,6 +32,8 @@ def generate_code(response, language):
     
     if language == 'python':
         from languages.python import code
+    elif language == 'c++':
+        from languages.c_plus_plus import code
     
     kwargs = {}
     for entity in code[intent]['entities']:
