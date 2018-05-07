@@ -1,4 +1,12 @@
-code = {
+code_dict = {
+    'end_block': '',
+
+    'default_code': '',
+
+    'begin_main': '''
+        if __name__ == '__main__':
+    ''',
+
     # Output
     'print': {
         'entities': ['to_print'],
@@ -30,6 +38,12 @@ code = {
     'begin_while': {
         'entities': ['condition'],
         'code': 'while {condition}:'
+    },
+
+    # Declare variables
+    'declare_var': {
+        'entities': ['var_name', 'var_type'],
+        'code': ''
     },
 
     # Assignment / initialisation
