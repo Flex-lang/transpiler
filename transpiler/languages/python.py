@@ -1,4 +1,12 @@
-code = {
+code_dict = {
+    'end_block': '',
+
+    'default_code': '',
+
+    'begin_main': '''
+        if __name__ == '__main__':
+    ''',
+
     # Output
     'print': {
         'entities': ['to_print'],
@@ -20,6 +28,39 @@ code = {
     },
     # TODO: multiple input
 
+
+    #Conditional
+    # if
+    'begin_if': {
+        'entities': ['condition'],
+        'code': 'if {condition}:'
+    },
+    # else
+    'begin_else': {
+        'code': 'else:'
+    },
+    # else if
+    'begin_else_if': {
+        'entities': ['condition'],
+        'code': 'elif {condition}:'
+    },
+    # switch
+    'begin_switch': {
+        'entities': ['switch_var'],
+        'code': ''
+    },
+    # case
+    'begin_case': {
+        'entities': ['case_value'],
+        'code': ''
+    },
+    # unless
+    'begin_unless': {
+        'entities': ['condition'],
+        'code': 'if not {condition}:'
+    },
+
+
     # Loops
     # for each
     'begin_for_each': {
@@ -30,6 +71,12 @@ code = {
     'begin_while': {
         'entities': ['condition'],
         'code': 'while {condition}:'
+    },
+
+    # Declare variables
+    'declare_var': {
+        'entities': ['var_name', 'var_type'],
+        'code': ''
     },
 
     # Assignment / initialisation
