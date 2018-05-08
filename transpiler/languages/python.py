@@ -1,11 +1,9 @@
 code_dict = {
-    'end_block': '',
+    'end_block': '\n',
 
     'default_code': '',
 
-    'begin_main': '''
-        if __name__ == '__main__':
-    ''',
+    'begin_main': '''if __name__ == '__main__':\n''',
 
     # Output
     'print': {
@@ -37,6 +35,7 @@ code_dict = {
     },
     # else
     'begin_else': {
+	'entities': [],
         'code': 'else:'
     },
     # else if
@@ -77,6 +76,11 @@ code_dict = {
     'declare_var': {
         'entities': ['var_name', 'var_type'],
         'code': ''
+    },
+
+    'declare_array': {
+        'entities': ['var_name', 'var_type'],
+        'code': '{var_name} = []'
     },
 
     # Assignment / initialisation

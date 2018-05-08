@@ -37,17 +37,18 @@ code_dict = {
     },
     # else
     'begin_else': {
+	'entities': [],
         'code': 'else {{'
     },
     # else if
     'begin_else_if': {
         'entities': ['condition'],
-        'code': 'else if({condition}) {{'
+        'code': 'else if ({condition}) {{'
     },
     # switch
     'begin_switch': {
         'entities': ['switch_var'],
-        'code': 'switch({switch_var}) {{'
+        'code': 'switch ({switch_var}) {{'
     },
     # case
     'begin_case': {
@@ -57,7 +58,7 @@ code_dict = {
     # unless
     'begin_unless': {
         'entities': ['condition'],
-        'code': 'if(!({condition})) {{'
+        'code': 'if (!({condition})) {{'
     },
 
 
@@ -70,7 +71,7 @@ code_dict = {
     # while
     'begin_while': {
         'entities': ['condition'],
-        'code': 'while({condition}) {{'
+        'code': 'while ({condition}) {{'
     },
 
     # Declare variables
@@ -88,6 +89,10 @@ code_dict = {
     #         code += ';'
     #     ''',
     # },
+    'declare_array': {
+        'entities': ['var_name', 'var_type'],
+        'code': 'std::vector<{var_type}> {var_name};'
+    },
 
     # Assignment / initialisation
     'initialize_assign': {
