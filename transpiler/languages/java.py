@@ -3,7 +3,7 @@ code_dict = {
 
     'default_code': 'import java.awt.*;\nimport java.awt.geom.*;\nimport java.io.*;\nimport java.util.*;\n\n',
 
-    'begin_main': 'public class test {{\nint main() {{\n',
+    'begin_main': 'public class test {\npublic static void main() {\n',
 
     # Output
     'print': {
