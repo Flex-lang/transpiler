@@ -61,6 +61,8 @@ if __name__ == '__main__':
         from languages.python import code_dict
     elif target_language == 'c++':
         from languages.c_plus_plus import code_dict
+    elif target_language == 'java':
+        from languages.java import code_dict
 
     code = [code_dict['default_code']]
     current_indent_level = 0
