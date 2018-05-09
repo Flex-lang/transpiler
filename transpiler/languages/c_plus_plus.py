@@ -1,7 +1,7 @@
 code_dict = {
     'end_block': '}\n',
 
-    'default_code': '#include <algorithm>\n#include <array>\n#include <cstdlib>\n#include <functional>\n#include <iostream>\n#include <random>\n#include <string>\n#include <vector>\n\n',
+    'default_code': '#include <algorithm>\n#include <array>\n#include <cstdlib>\n#include <functional>\n#include <iostream>\n#include <random>\n#include <string>\n#include <vector>\n\ntypedef int integer;\ntypedef float real;\ntypedef string str;\ntypedef char character;\ntypedef bool boolean;\n\n',
 
     'begin_main': 'int main() {\n',
 
