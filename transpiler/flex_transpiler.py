@@ -16,6 +16,8 @@ Options:
   -h, --help                            Print this help text.
 
 Target languages available:
+  c++
+  java
   python
 '''
 
@@ -88,3 +90,5 @@ if __name__ == '__main__':
 
     with open(output_file_path, 'w') as output:
         output.writelines(code)
+        if target_language == 'java':
+            output.write('}')

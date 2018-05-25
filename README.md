@@ -46,6 +46,8 @@ Options:
   -h, --help                            Print this help text.
 
 Target languages available:
+  c++
+  java
   python
 ```
 
