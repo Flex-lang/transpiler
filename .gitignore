@@ -102,3 +102,6 @@ ENV/
 
 # Code editors and IDEs
 .vscode
+
+# Trained model files
+model/
