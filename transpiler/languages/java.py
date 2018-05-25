@@ -78,7 +78,7 @@ code_dict = {
     # Declare variables
     'declare_var': {
         'entities': ['var_name', 'var_type'],
-        'code': '{var_type} {var_name};'
+        'code': '{var_type} {var_name} = new {var_type}();'
     },
     # TODO
     # 'declare_multi_var': {
@@ -92,7 +92,7 @@ code_dict = {
     # },
     'declare_array': {
         'entities': ['var_name', 'var_type'],
-        'code': 'ArrayList<{var_type}> {var_name};'
+        'code': 'ArrayList<{var_type}> {var_name} = new ArrayList<{var_type}>();'
     },
 
     # Assignment / initialisation
