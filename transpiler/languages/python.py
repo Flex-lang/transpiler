@@ -74,18 +74,18 @@ code_dict = {
 
     # Declare variables
     'declare_var': {
-        'entities': ['var_name', 'var_type'],
+        'entities': ['name', 'type'],
         'code': ''
     },
 
     'declare_array': {
-        'entities': ['var_name', 'var_type'],
-        'code': '{var_name} = []'
+        'entities': ['name', 'type'],
+        'code': '{name} = []'
     },
 
     # Assignment / initialisation
     'initialize_assign': {
-        'entities': ['var_name', 'var_value'],
-        'code': '{var_name} = {var_value}'
+        'entities': ['name', 'value'],
+        'code': '{name} = {value}'
     },
 }

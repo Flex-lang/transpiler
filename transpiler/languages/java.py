@@ -77,27 +77,27 @@ code_dict = {
 
     # Declare variables
     'declare_var': {
-        'entities': ['var_name', 'var_type'],
-        'code': '{var_type} {var_name} = new {var_type}();'
+        'entities': ['name', 'type'],
+        'code': '{type} {name} = new {type}();'
     },
     # TODO
     # 'declare_multi_var': {
-    #     'entities': ['var_name', 'var_type'],
-    #     'code': '{var_type} ',
+    #     'entities': ['name', 'type'],
+    #     'code': '{type} ',
     #     'exec': '''
-    #         for arg in response['entities']['var_name']:
+    #         for arg in response['entities']['name']:
     #             code += arg['value']
     #         code += ';'
     #     ''',
     # },
     'declare_array': {
-        'entities': ['var_name', 'var_type'],
-        'code': 'ArrayList<{var_type}> {var_name} = new ArrayList<{var_type}>();'
+        'entities': ['name', 'type'],
+        'code': 'ArrayList<{type}> {name} = new ArrayList<{type}>();'
     },
 
     # Assignment / initialisation
     'initialize_assign': {
-        'entities': ['var_name', 'var_value'],
-        'code': '{var_name} = {var_value};'
+        'entities': ['name', 'value'],
+        'code': '{name} = {value};'
     },
 }
