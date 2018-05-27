@@ -98,6 +98,32 @@
 * [character](type) [WWIX4UTQ](name), [gmW_CiJh](name), [WEk4lccQ](name)
 * [complex](type) [x18Jvo2f](name), [VfdDFL1M](name)
 
+## intent:declare_array
+* [ndlashfjas](name): array of [integers](type)
+* [dsai_jaslgd](name) is array of [integers](type)
+* [ruwevcm](name) is an array of [integers](type)
+* [dmkasdml](name): list of [integers](type)
+* [fieh_wjj](name) is list of [integers](type)
+* [oemkfsdf](name) is a list of [integers](type)
+* [fmi3p9wjf](name): array of [real](type)
+* [fnow3lfi](name) is array of [real](type)
+* [dio3nlf](name) is an array of [real](type)
+* [frjihfw4](name): list of [real](type)
+* [vm43sbtr](name) is list of [real](type)
+* [pmf4wemf](name) is a list of [real](type)
+* [mf3904mf](name): array of [booleans](type)
+* [mv4omk](name) is array of [booleans](type)
+* [fg9e9j](name) is an array of [booleans](type)
+* [fm4jme](name): list of [booleans](type)
+* [gmdnrr](name) is list of [booleans](type)
+* [dlasmlm](name) is a list of [booleans](type)
+* [msalndjr](name): array of [strings](type)
+* [cbsunfvsdkn](name) is array of [strings](type)
+* [sdfmlsd](name) is an array of [strings](type)
+* [dmlasmw](name): list of [strings](type)
+* [vmlkdnsf](name) is list of [strings](type)
+* [dowfsd](name) is a list of [strings](type)
+
 ## synonym:integer
 * int
 * ints
