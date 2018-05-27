@@ -21,22 +21,27 @@ Target languages available:
   python
 '''
 
-from os import environ
+from os import listdir
 import re
 
 from docopt import docopt
-import requests
+from rasa_nlu.model import Interpreter
 
-API_URL = 'https://api.wit.ai/message?v=22/02/2018'
 MAIN_REGEX = re.compile(r'Main\(\)\s*')
+MODEL_DIR = './data/model/default/'
 
 
-def generate_code(response, code_dict):
-    intent = response['entities']['intent'][0]['value']
+def generate_code(interpreted_data, code_dict):
+    print()
+    print(interpreted_data)
+    print()
+    intent = interpreted_data['intent']['name']
 
     kwargs = {}
     for entity in code_dict[intent]['entities']:
-        kwargs[entity] = response['entities'][entity][0]['value']
+        for e in interpreted_data['entities']:
+            if e['entity'] == entity:
+                kwargs[entity] = e['value']
 
     return code_dict[intent]['code'].format_map(kwargs) + '\n'
 
@@ -57,8 +62,7 @@ if __name__ == '__main__':
     target_language = args['--target-language']
     output_file_path = args['--output']
 
-    headers = { 'Authorization': 'Bearer ' + environ['WIT_AUTH'] }
-
+    # import code dictionary for target language
     if target_language == 'python':
         from languages.python import code_dict
     elif target_language == 'c++':
@@ -66,6 +70,11 @@ if __name__ == '__main__':
     elif target_language == 'java':
         from languages.java import code_dict
 
+    # load NLU model
+    interpreter = Interpreter.load(MODEL_DIR + listdir(MODEL_DIR)[0])
+
+    # parse each line from the input file and store its transpiled code in the
+    # `code` list
     code = [code_dict['default_code']]
     current_indent_level = 0
     prev_indent_level = 0
@@ -80,15 +89,17 @@ if __name__ == '__main__':
                 if MAIN_REGEX.match(line):
                     code.append(code_dict['begin_main'])
                 else:
-                    params = { 'q': line }
-                    response = requests.get(API_URL, params=params, headers=headers).json()
-                    code.append('\t' * current_indent_level + generate_code(response=response, code_dict=code_dict))
+                    interpreted_data = interpreter.parse(line.strip())
+                    code.append('\t' * current_indent_level
+                                + generate_code(interpreted_data, code_dict))
             prev_indent_level = current_indent_level
     while current_indent_level > 0:
         code.append('\t' * (current_indent_level - 1) + code_dict['end_block'])
         current_indent_level -= 1
 
+    # write lines in `code` list to output file
     with open(output_file_path, 'w') as output:
         output.writelines(code)
+        # special case: closing brace for the Java class
         if target_language == 'java':
             output.write('}')
