@@ -1,8 +1,9 @@
 Main()
-	x is an int
-	x = 5
+	x is an integer
 	input x
+	values is an array of integers
+	values = 1, 5, 8, 6, 0, 4, 5
 	print x
-	for every element in list
-		element = 12.123
-		print element
+	for every value in values
+		value = x * value
+		print value
