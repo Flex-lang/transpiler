@@ -20,9 +20,14 @@ Implementation of Flex's transpiler using the NLU model trained using [Rasa NLU]
    . venv/bin/activate
    ```
 
-1. Install the requirements:
+1. Install the required libraries:
    ```bash
-   pip install -r requirements.txt
+   pip install rasa_core rasa_nlu[spacy]
+   ```
+
+1. Download spAcy model:
+   ```bash
+   python -m spacy download en_core_web_md
    ```
 
 ## Train NLU model
