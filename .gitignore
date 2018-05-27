@@ -105,3 +105,8 @@ ENV/
 
 # Trained model files
 model/
+
+# Generated target source files
+test/*.cpp
+test/*.java
+test/*.py
