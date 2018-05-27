@@ -29,11 +29,11 @@ code_dict = {
     # TODO: multiple input
 
 
-    #Conditional
+    # Conditional
     # if
     'begin_if': {
-        'entities': ['condition'],
-        'code': 'if({condition}) {{'
+        'entities': ['expression'],
+        'code': 'if({expression}) {{'
     },
     # else
     'begin_else': {
@@ -42,8 +42,8 @@ code_dict = {
     },
     # else if
     'begin_else_if': {
-        'entities': ['condition'],
-        'code': 'else if ({condition}) {{'
+        'entities': ['expression'],
+        'code': 'else if ({expression}) {{'
     },
     # switch
     'begin_switch': {
@@ -57,8 +57,8 @@ code_dict = {
     },
     # unless
     'begin_unless': {
-        'entities': ['condition'],
-        'code': 'if (!({condition})) {{'
+        'entities': ['expression'],
+        'code': 'if (!({expression})) {{'
     },
 
 
@@ -70,8 +70,8 @@ code_dict = {
     },
     # while
     'begin_while': {
-        'entities': ['condition'],
-        'code': 'while ({condition}) {{'
+        'entities': ['expression'],
+        'code': 'while ({expression}) {{'
     },
 
     # Declare variables
@@ -95,8 +95,12 @@ code_dict = {
     },
 
     # Assignment / initialisation
-    'initialize_assign': {
-        'entities': ['name', 'value'],
-        'code': '{name} = {value};'
+    'assign_variable': {
+        'entities': ['name', 'expression'],
+        'code': '{name} = {expression};'
+    },
+    'assign_array': {
+        'entities': ['name', 'array_values'],
+        'code': '{name} = {{ {array_values} }};'
     },
 }

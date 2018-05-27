@@ -3,7 +3,7 @@ code_dict = {
 
     'default_code': 'import java.awt.*;\nimport java.awt.geom.*;\nimport java.io.*;\nimport java.util.*;\n\n',
 
-    'begin_main': 'public class test {\npublic static void main() {\n',
+    'begin_main': 'public class Test {\npublic static void main() {\n',
 
     # Output
     'print': {
@@ -15,7 +15,7 @@ code_dict = {
     'print_elements': {
         'entities': ['to_print'],
         'code': '''
-            for ( Object element : {to_print})
+            for (Object element : {to_print})
                 System.out.print(element + ", ");
             System.out.println("\b\b \n");
         '''
@@ -25,7 +25,7 @@ code_dict = {
     # TODO handling different data types
     'input': {
         'entities': ['var_name'],
-        'code': 'String {var_name} = System.console().readLine();'
+        'code': '{var_name} = System.console().readLine();'
     },
     # TODO: multiple input
 
@@ -33,8 +33,8 @@ code_dict = {
     #Conditional
     # if
     'begin_if': {
-        'entities': ['condition'],
-        'code': 'if({condition}) {{'
+        'entities': ['expression'],
+        'code': 'if ({expression}) {{'
     },
     # else
     'begin_else': {
@@ -43,8 +43,8 @@ code_dict = {
     },
     # else if
     'begin_else_if': {
-        'entities': ['condition'],
-        'code': 'else if ({condition}) {{'
+        'entities': ['expression'],
+        'code': 'else if ({expression}) {{'
     },
     # switch
     'begin_switch': {
@@ -58,8 +58,8 @@ code_dict = {
     },
     # unless
     'begin_unless': {
-        'entities': ['condition'],
-        'code': 'if (!({condition})) {{'
+        'entities': ['expression'],
+        'code': 'if (!({expression})) {{'
     },
 
 
@@ -67,12 +67,12 @@ code_dict = {
     # for each
     'begin_for_each': {
         'entities': ['loop_over', 'loop_as'],
-        'code': 'for ( Object {loop_as} : {loop_over}) {{'
+        'code': 'for (Object {loop_as} : {loop_over}) {{'
     },
     # while
     'begin_while': {
-        'entities': ['condition'],
-        'code': 'while ({condition}) {{'
+        'entities': ['expression'],
+        'code': 'while ({expression}) {{'
     },
 
     # Declare variables
@@ -96,8 +96,12 @@ code_dict = {
     },
 
     # Assignment / initialisation
-    'initialize_assign': {
-        'entities': ['name', 'value'],
-        'code': '{name} = {value};'
+    'assign_variable': {
+        'entities': ['name', 'expression'],
+        'code': '{name} = {expression};'
+    },
+    'assign_array': {
+        'entities': ['name', 'array_values'],
+        'code': '{name} = {{ {array_values} }};'
     },
 }
