@@ -64,6 +64,103 @@ From the `transpiler` directory, run `flex_transpiler.py` with proper arguments.
    ./flex_transpiler.py ~/input_source.flex -l python -o ~/output_source.py
    ```
 
+## Results
+
+##### Input Flex Code
+```bash
+Main()
+    arr is an array of integers
+    x is integer
+    input 10 elements in arr
+    input x
+    flag: boolean
+    flag is false
+    for every element in arr
+   	 if element == x
+   		 display "FOUND!"
+   		 flag is true
+    if flag == false
+   	 display "NOT FOUND!"
+```
+
+##### Transpiled Python Code
+```bash
+if __name__ == '__main__':
+    input(x)
+    value_list = [1, 5, 8, 6, 0, 4, 5]
+    print(x)
+    for element in value_list:
+   	 element = x * element
+   	 print(element)
+```
+
+##### Transpiled CPP Code
+```bash
+#include <algorithm>
+#include <array>
+#include <cstdlib>
+#include <functional>
+#include <iostream>
+#include <random>
+#include <string>
+#include <vector>
+
+typedef int integer;
+typedef float real;
+typedef char character;
+typedef bool boolean;
+
+int main() {
+    std::vector<integer> arr;
+    integer x;
+    for (size_t i = 0; i < 10; i++) {
+   	 integer temp;
+   	 std::cin >> temp;
+   	 arr.push_back(temp);
+    }
+    std::cin >> x;
+    boolean flag;
+    flag = false;
+    for (const auto& element : arr) {
+   	 If (element == x) {
+   		 std::cout << "found!";
+   		 flag = true;
+    }
+    if (flag == false) {
+   	 std::cout << "not found!";
+    }
+
+    return 0;
+}
+```
+
+##### Transpiled Java Code
+```bash
+import java.awt.*;
+import java.awt.geom.*;
+import java.io.*;
+import java.util.*;
+
+public class test {
+    public static void main() {
+   	 ArrayList<integer> arr = new ArrayList<integer>();
+   	 integer x = new integer();
+   	 String arr = System.console().readLine();
+   	 String x = System.console().readLine();
+   	 boolean flag = new boolean();
+   	 flag = false;
+   	 for (Object element : arr) {
+   		 if(element == x) {
+   			 System.out.println("found!");
+   			 flag = true;
+   	 }
+   	 If (flag == false) {
+   		 System.out.println("not found!");
+   	 }
+    }
+}
+```
+   
 ## License
 
 This project is licensed under the terms of the [MIT license](LICENSE).
