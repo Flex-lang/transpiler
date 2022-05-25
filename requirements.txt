@@ -78,7 +78,7 @@ ply==3.11
 preshed==1.0.0
 protobuf==3.5.2.post1
 Pygments==2.2.0
-PyJWT==1.6.4
+PyJWT==2.4.0
 pykwalify==1.6.0
 pylint==1.9.1
 pyparsing==2.2.0
