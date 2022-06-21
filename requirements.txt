@@ -68,7 +68,7 @@ nbconvert==5.3.1
 nbformat==4.4.0
 nbsphinx==0.3.3
 networkx==2.1
-numpy==1.14.3
+numpy==1.22.0
 packaging==17.1
 pandoc==1.0.2
 pandocfilters==1.4.2
