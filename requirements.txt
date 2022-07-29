@@ -60,7 +60,7 @@ MarkupSafe==1.0
 matplotlib==2.2.2
 mattermostwrapper==2.1
 mccabe==0.6.1
-mistune==0.8.3
+mistune==2.0.3
 msgpack-numpy==0.4.1
 msgpack-python==0.5.6
 murmurhash==0.28.0
